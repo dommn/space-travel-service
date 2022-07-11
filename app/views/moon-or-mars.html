@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="/moon-or-mars" method="post">
+
+        {{ govukRadios({
+          idPrefix: "where-do-you-want-to-travel-to",
+          name: "where-do-you-want-to-travel-to",
+          fieldset: {
+            legend: {
+              text: "Where do you want to travel to?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+          items: [
+            {
+              value: "The moon",
+              text: "The moon",
+              checked: checked("where-do-you-want-to-travel-to", "The moon")
+            },
+            {
+              value: "Mars",
+              text: "Mars",
+              checked: checked("where-do-you-want-to-travel-to", "Mars")
+            }
+          ]
+        }) }}
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

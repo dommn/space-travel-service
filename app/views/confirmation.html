@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+
+{% set mainClasses = "govuk-main-wrapper--l" %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      {{ govukPanel({
+        titleText: "Application complete"
+      }) }}
+
+      <h2 class="govuk-heading-m">What happens next</h2>
+
+      <p class="govuk-body">
+        We’ve sent your application to the people who deal with the Space stuff.
+      </p>
+      <p class="govuk-body">
+        They will contact you either to confirm your registration, or to ask for more information.
+      </p>
+
+    </div>
+  </div>
+{% endblock %}
